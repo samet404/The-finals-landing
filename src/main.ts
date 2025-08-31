@@ -1,24 +1,48 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import './style.css';
+import { gsap } from 'gsap';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+window.addEventListener('load', () => {
+  document.getElementById('video-back-text')!.innerText =
+    `GRAB THE VAULT > PUT IT IN THE CASHOUT STATION > DEFENSE THE CASHOUT STATION > `.repeat(
+      5
+    );
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const video = document.getElementById('video') as HTMLVideoElement;
+  gsap.to(video, {
+    x: '60vw',
+    y: '-50vh',
+    scrollTrigger: {
+      trigger: '#video',
+      start: 'top 0%',
+      pinSpacing: true,
+      scrub: true,
+      end: 'bottom 10%',
+      markers: true,
+    },
+  });
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '#platforms',
+        pin: true,
+        start: 'top top',
+        end: '+=100%',
+        scrub: true,
+        pinSpacing: true,
+        toggleActions:  'restart none reverse reverse',
+      },
+      defaults: {
+        duration: 0.2,
+      },
+    })
+    .from(document.body, {
+      backgroundColor: 'black',
+    });
+
+  document.querySelector('video')!.play();
+});

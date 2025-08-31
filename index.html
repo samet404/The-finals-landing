@@ -4,10 +4,170 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>THE FINALS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/4d4fa969-5a42-4848-8bf2-4281e9e8ef63/favicon.ico"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div id="app"></div>
+  <body
+    style="scrollbar-width: none"
+    class="bg-[#cd0b3d] h-screen overflow-x-hidden w-screen flex flex-col overflow-y-scroll"
+  >
+    <div
+      class="w-full poppins-medium bg-black z-50 text-[1rem] p-[1rem] bg-black flex flex-row justify-between"
+    >
+      <div class="flex text-white flex-row gap-6 items-center justify-center">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/1bfee91c-eff5-45ff-898a-72f9a6210485/thefinals_web_thefinals_small_01.png?format=1500w"
+          width="200"
+          class="pr-9"
+        />
+
+        <div>NEWS</div>
+        <div>GAMEMODES</div>
+        <div>SUPPORT</div>
+        <div>MERCH</div>
+        <div>ESPORTS</div>
+        <div>EMBARK PORTAL</div>
+      </div>
+
+      <div class="flex flex-row gap-4"></div>
+    </div>
+
+    <div class="p-[3rem] flex-row flex relative items-center justify-between">
+      <img
+        class="w-full h-full absolute object-fill z-[3] top-0 left-0"
+        src="/public/coloredbg.png"
+        alt=""
+        srcset=""
+      />
+      <div
+        class="flex items-center z-10 justify-center relative flex-col gap-3"
+      >
+        <img
+          class="w-[14rem]"
+          src="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/71c09ed4-0ad9-4490-aa37-73b52d91926b/THE-FINALS_Logo_Stacked-White.png"
+          alt=""
+          srcset=""
+        />
+        <div class="text-white poppins-bold">SEASON 7 | THE DIVIDE</div>
+      </div>
+      <button
+        id="play-btn"
+        class="z-10 shadow-2xl px-4 text-[1.4rem] rounded-md py-2 poppins-medium text-black bg-white"
+      >
+        FREE TO PLAY
+      </button>
+    </div>
+
+    <div class="relative w-full bg-black">
+      <div
+        class="poppins-bold poppins-bold text-white p-3 text-[3rem] items-end absolute bottom-0 left-0 flex w-full h-full justify-end"
+      >
+        <p id="video-back-text"></p>
+      </div>
+      <video id="video" src="/trailer.mp4" class="w-full" autoplay loop></video>
+    </div>
+
+    <div id="platforms" class="bg-black mx-auto w-full">
+      <!-- Flex Container -->
+      <div class="flex items-center justify-center gap-6 p-3 md:justify-around">
+        <!-- NVIDIA GeForce NOW -->
+        <div
+          class="flex w-full items-center justify-center rounded-lg p-3 shadow-md transition-shadow duration-300 hover:shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <div>
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/266f2613-8fec-46ad-9b33-2fea022ee182/NVIDIA_GeForce-NOW_Logo.png"
+              alt="NVIDIA GeForce NOW"
+              class="max-h-full w-[8rem] object-contain transition-transform duration-300 hover:scale-105"
+            />
+          </div>
+        </div>
+
+        <!-- Steam -->
+        <div
+          class="flex w-full items-center justify-center rounded-lg p-3 shadow-md transition-shadow duration-300 hover:shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <a
+            href="https://store.steampowered.com/app/2073850/THE_FINALS/"
+            class="flex h-full w-full items-center justify-center"
+          >
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/5b11bca1-c119-456b-a631-a029c8924a87/Steam_Logo.png"
+              alt="Steam"
+              class="max-h-full w-[8rem] object-contain transition-transform duration-300 hover:scale-105"
+            />
+          </a>
+        </div>
+
+        <!-- PlayStation 5 -->
+        <div
+          class="flex w-full items-center justify-center rounded-lg p-3 shadow-md transition-shadow duration-300 hover:shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <a
+            href="https://store.playstation.com/en-se/concept/10006873/"
+            class="flex h-full w-full items-center justify-center"
+          >
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/c66b33e4-e87c-4b2e-aa03-0167d70a7f00/PS5_Logo.png"
+              alt="PlayStation 5"
+              class="max-h-full w-[8rem] object-contain transition-transform duration-300 hover:scale-105"
+            />
+          </a>
+        </div>
+
+        <!-- Xbox -->
+        <div
+          class="flex w-full items-center justify-center rounded-lg p-3 shadow-md transition-shadow duration-300 hover:shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <a
+            href="https://www.xbox.com/en-US/games/store/the-finals/9pgd71cmds0z"
+            class="flex h-full w-full items-center justify-center"
+          >
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/1f1da685-2937-483e-874c-50831d6cd8d4/Xbox_Logos.png"
+              alt="Xbox"
+              class="max-h-full w-[8rem] object-contain transition-transform duration-300 hover:scale-105"
+            />
+          </a>
+        </div>
+
+        <!-- PlayStation 4 -->
+        <div
+          class="flex w-full items-center justify-center rounded-lg p-3 shadow-md transition-shadow duration-300 hover:shadow-lg sm:w-1/2 md:w-1/3 lg:w-1/5"
+        >
+          <a
+            href="https://store.playstation.com/en-se/concept/10006873/"
+            class="flex h-full w-full items-center justify-center"
+          >
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/62d66fa29e72c560f8efc020/c88f7a07-c0c7-4cdf-bd60-bda9127de16c/PS4_Logo.png"
+              alt="PlayStation 4"
+              class="max-h-full w-[8rem] object-contain transition-transform duration-300 hover:scale-105"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-[90rem]">
+        
+    </div>
+
+    <img src="./public/maps.png" class="w-full h-[40rem]" alt="">
+    <div class="bg-black flex flex-col p-[3rem]">
+
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
